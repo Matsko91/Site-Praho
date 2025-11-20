@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praho SHOP</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* --- Reset & fonts --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Orbitron', sans-serif; background: #000; color: #fff; }
+
+/* --- Navbar --- */
+header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; border-bottom: 2px solid #f00; }
+header h1 { color: #f00; letter-spacing: 2px; }
+nav a { color: #fff; margin-left: 25px; text-decoration: none; transition: 0.3s; }
+nav a:hover { color: #f00; }
+
+/* --- Hero --- */
+.hero { text-align: center; padding: 100px 20px; background: linear-gradient(135deg,#000 0%,#111 100%); }
+.hero h2 { font-size: 3em; color: #f00; margin-bottom: 20px; }
+.hero p { font-size: 1.2em; margin-bottom: 30px; }
+.hero button { background: #f00; color: #fff; border: none; padding: 15px 30px; cursor: pointer; font-size: 1em; transition: 0.3s; }
+.hero button:hover { background: #fff; color: #f00; }
+
+/* --- Services --- */
+.services { padding: 50px 20px; display: flex; justify-content: space-around; flex-wrap: wrap; }
+.service-card { background: #111; border: 1px solid #f00; padding: 20px; width: 250px; margin: 10px; text-align: center; transition: 0.3s; }
+.service-card:hover { background: #222; transform: scale(1.05); }
+.service-card h3 { color: #f00; margin-bottom: 10px; }
+
+/* --- Shop --- */
+.shop { padding: 50px 20px; display: flex; justify-content: space-around; flex-wrap: wrap; }
+.product { background: #111; border: 1px solid #f00; padding: 20px; width: 250px; margin: 10px; text-align: center; }
+.product button { margin-top: 15px; background: #f00; color: #fff; border: none; padding: 10px 20px; cursor: pointer; }
+.product button:hover { background: #fff; color: #f00; }
+
+/* --- Avis Clients --- */
+.testimonials { padding: 50px 20px; background: #111; }
+.testimonial { border-left: 3px solid #f00; margin: 20px 0; padding-left: 20px; }
+
+/* --- Footer --- */
+footer { text-align: center; padding: 30px; border-top: 2px solid #f00; }
+footer a { color: #f00; text-decoration: none; margin: 0 10px; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Praho SHOP</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#shop">Shop</a>
+    <a href="#testimonials">Avis</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Bienvenue chez Praho SHOP</h2>
+  <p>Montage Vidéo | Cinématique GTA | Graphisme | Nitro Discord</p>
+  <button onclick="alert('Redirection vers Discord pour commander')">Commander maintenant</button>
+</section>
+
+<section id="services" class="services">
+  <div class="service-card">
+    <h3>Montage Vidéo</h3>
+    <p>Des vidéos professionnelles, cinématiques et sur mesure.</p>
+  </div>
+  <div class="service-card">
+    <h3>Cinématique GTA</h3>
+    <p>Crée des scènes GTA incroyables avec des effets spéciaux.</p>
+  </div>
+  <div class="service-card">
+    <h3>Graphisme</h3>
+    <p>Logos, miniatures, visuels stylés pour Discord et YouTube.</p>
+  </div>
+  <div class="service-card">
+    <h3>Nitro Boost Discord</h3>
+    <p>Boostez votre serveur avec Nitro et membres actifs.</p>
+  </div>
+</section>
+
+<section id="shop" class="shop">
+  <div class="product">
+    <h3>Montage Vidéo</h3>
+    <p>10€</p>
+    <button onclick="addToCart('Montage Vidéo', 50)">Ajouter au panier</button>
+  </div>
+  <div class="product">
+    <h3>Cinématique GTA</h3>
+    <p>12€</p>
+    <button onclick="addToCart('Cinématique GTA', 70)">Ajouter au panier</button>
+  </div>
+  <div class="product">
+    <h3>Graphisme</h3>
+    <p>3€</p>
+    <button onclick="addToCart('Graphisme', 30)">Ajouter au panier</button>
+  </div>
+  <div class="product">
+    <h3>Nitro Boost Discord</h3>
+    <p>€</p>
+    <button onclick="addToCart('Nitro Boost Discord', 20)">Ajouter au panier</button>
+  </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+  <h2 style="color:#f00; text-align:center;">Avis Clients</h2>
+  <div class="testimonial">
+    <p>"Praho est incroyable ! Montage parfait et rapide."</p>
+    <p>- Client satisfait</p>
+  </div>
+  <div class="testimonial">
+    <p>"Cinématiques GTA comme jamais vues. Recommandé !"</p>
+    <p>- GamerPro</p>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>Contactez-moi sur <a href="#">Discord</a></p>
+  <p>&copy; 2025 Praho SHOP</p>
+</footer>
+
+<script>
+// --- Panier simple ---
+let cart = [];
+function addToCart(name, price) {
+  cart.push({name, price});
+  alert(`${name} ajouté au panier !`);
+  console.log(cart);
+}
+</script>
+
+</body>
+</html>
